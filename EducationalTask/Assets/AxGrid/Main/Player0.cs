@@ -7,7 +7,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace AxGrid.Main
 {
-    public class Player : Unit
+    public class Player0 : Unit
     {
         private protected override void Move()
         {
