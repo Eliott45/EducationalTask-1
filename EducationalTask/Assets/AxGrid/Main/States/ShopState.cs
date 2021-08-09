@@ -15,8 +15,6 @@ namespace AxGrid.Main.States
             Settings.GlobalModel.Set("BtnIdleEnable", true);
             Settings.GlobalModel.Set("BtnShopEnable", false);
             Settings.GlobalModel.Set("BtnJobEnable", true);
-            Settings.GlobalModel.EventManager.Invoke("Move");
-            Settings.GlobalModel.EventManager.Invoke("ChangeColor");
         }
         
         [Bind]

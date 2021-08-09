@@ -1,17 +1,14 @@
 using System;
 using AxGrid.Base;
+using AxGrid.Model;
 using UnityEngine;
 
 namespace AxGrid.Main
 {
-    public class ChangeCameraColor : MonoBehaviourExt
+    public class ChangeCameraColor : MonoBehaviourExtBind
     {
-        [OnAwake]
-        private void StartAwake()
-        {
-            Settings.GlobalModel.EventManager.AddAction("ChangeColor", ChangeColor);
-        }
 
+        [Bind("OnColorChanged")]
         private void ChangeColor()
         {
             var newColor = Settings.GlobalModel.Get("Color") switch
@@ -24,11 +21,6 @@ namespace AxGrid.Main
             if (Camera.main is { }) Camera.main.backgroundColor = newColor;
         } 
         
-        [OnDestroy]
-        private void Die()
-        {
-            Settings.GlobalModel.EventManager.RemoveAction(ChangeColor);
-        }
 
     }
 }

@@ -1,24 +1,20 @@
 using System.Numerics;
 using AxGrid.Base;
+using AxGrid.Model;
 using AxGrid.Path;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
 namespace AxGrid.Main
 {
-    public class Player : MonoBehaviourExt
+    public class Player : MonoBehaviourExtBind
     {
         [Header("Set in Inspector:")] 
         [SerializeField] private Transform _idlePlace;
         [SerializeField] private Transform _jobPlace;
         [SerializeField] private Transform _shopPlace;
-        
-        [OnAwake]
-        private void StartAwake()
-        {
-            Settings.GlobalModel.EventManager.AddAction("Move", Move);
-        }
 
+        [Bind("OnActionChanged")]
         private void Move()
         {
             var currentPos = transform.position;
@@ -38,11 +34,6 @@ namespace AxGrid.Main
                 transform.position = Vector3.Lerp(currentPos, newPos, value);
             });
         }
-
-        [OnDestroy]
-        private void Die()
-        {
-            Settings.GlobalModel.EventManager.RemoveAction(Move);
-        }
+        
     }
 }

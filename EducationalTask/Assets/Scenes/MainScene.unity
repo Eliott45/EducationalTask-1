@@ -1103,6 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4f7bbc863b520418fcb43c25c968c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globalModel: 1
 --- !u!1 &1007052255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,6 +2586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a20765f914ea654c8b8ea63dec4f3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  globalModel: 1
   _idlePlace: {fileID: 1443858259}
   _jobPlace: {fileID: 1817734492}
   _shopPlace: {fileID: 1552165937}
