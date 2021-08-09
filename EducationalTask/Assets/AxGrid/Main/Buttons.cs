@@ -35,5 +35,11 @@ namespace AxGrid.Main
             }
             button.SetActive(false);
         } 
+        
+        [OnDestroy]
+        private void Die()
+        {
+            Settings.GlobalModel.EventManager.RemoveAction(BlockButton);
+        }
     }
 }

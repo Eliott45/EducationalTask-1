@@ -37,6 +37,12 @@ namespace AxGrid.Main
             {
                 transform.position = Vector3.Lerp(currentPos, newPos, value);
             });
-        } 
+        }
+
+        [OnDestroy]
+        private void Die()
+        {
+            Settings.GlobalModel.EventManager.RemoveAction(Move);
+        }
     }
 }

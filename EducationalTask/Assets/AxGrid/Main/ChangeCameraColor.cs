@@ -6,11 +6,6 @@ namespace AxGrid.Main
 {
     public class ChangeCameraColor : MonoBehaviourExt
     {
-        [Header("Set in Inspector:")] 
-        [SerializeField] private Color _idleState;
-        [SerializeField] private Color _jobState;
-        [SerializeField] private Color _shopState;
-        
         [OnAwake]
         private void StartAwake()
         {
@@ -28,5 +23,11 @@ namespace AxGrid.Main
             };
             if (Camera.main is { }) Camera.main.backgroundColor = newColor;
         } 
+        
+        [OnDestroy]
+        private void Die()
+        {
+            Settings.GlobalModel.EventManager.RemoveAction(ChangeColor);
+        }
     }
 }
