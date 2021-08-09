@@ -13,6 +13,7 @@ namespace AxGrid.Main.States
         {
             Settings.GlobalModel.EventManager.Invoke("Move");
             Settings.GlobalModel.EventManager.Invoke("ChangeColor");
+            Settings.GlobalModel.EventManager.Invoke("BlockButton");
         }
         
         [Bind]

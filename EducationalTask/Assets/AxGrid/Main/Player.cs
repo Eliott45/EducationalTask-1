@@ -18,8 +18,8 @@ namespace AxGrid.Main
         {
             Settings.GlobalModel.EventManager.AddAction("Move", Move);
         }
-        
-        public void Move()
+
+        private void Move()
         {
             var currentPos = transform.position;
             var newPos = Settings.Fsm.CurrentStateName switch
