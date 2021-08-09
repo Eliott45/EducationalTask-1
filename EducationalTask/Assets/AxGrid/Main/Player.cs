@@ -22,11 +22,11 @@ namespace AxGrid.Main
         private void Move()
         {
             var currentPos = transform.position;
-            var newPos = Settings.Fsm.CurrentStateName switch
+            var newPos = Settings.GlobalModel.Get("Action") switch
             {
-                "Ready" => _idlePlace.position,
-                "Job" => _jobPlace.position,
-                "Shop" => _shopPlace.position,
+                EStates.idle => _idlePlace.position,
+                EStates.working => _jobPlace.position,
+                EStates.shopping => _shopPlace.position,
                 _ => Vector3.zero
             };
             newPos.y = currentPos.y;

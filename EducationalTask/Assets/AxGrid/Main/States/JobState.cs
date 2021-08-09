@@ -12,6 +12,7 @@ namespace AxGrid.Main.States
         public void Enter()
         {
             Settings.GlobalModel.Set("Color",EColors.Green);
+            Settings.GlobalModel.Set("Action",EStates.working);
             Settings.GlobalModel.Set("BtnIdleEnable", true);
             Settings.GlobalModel.Set("BtnShopEnable", true);
             Settings.GlobalModel.Set("BtnJobEnable", false);
