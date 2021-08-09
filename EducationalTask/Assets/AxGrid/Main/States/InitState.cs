@@ -11,7 +11,7 @@ namespace AxGrid.Main.States
         {
             Log.Info("Init objects");
 
-            Parent.Change("Ready");
+            // Parent.Change("Ready");
         }
 
         
