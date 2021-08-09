@@ -10,7 +10,7 @@ namespace AxGrid.Main.States
         [Enter]
         public void Enter()
         {
-            Settings.Model.Set("Color",EColors.Blue);
+            Settings.GlobalModel.Set("Color",EColors.Blue);
             Settings.GlobalModel.EventManager.Invoke("Move");
             Settings.GlobalModel.EventManager.Invoke("ChangeColor");
             Settings.GlobalModel.EventManager.Invoke("BlockButton");
