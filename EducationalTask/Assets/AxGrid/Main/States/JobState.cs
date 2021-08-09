@@ -12,9 +12,11 @@ namespace AxGrid.Main.States
         public void Enter()
         {
             Settings.GlobalModel.Set("Color",EColors.Green);
+            Settings.GlobalModel.Set("BtnIdleEnable", true);
+            Settings.GlobalModel.Set("BtnShopEnable", true);
+            Settings.GlobalModel.Set("BtnJobEnable", false);
             Settings.GlobalModel.EventManager.Invoke("Move");
             Settings.GlobalModel.EventManager.Invoke("ChangeColor");
-            Settings.GlobalModel.EventManager.Invoke("BlockButton");
         }
         
         [Bind]

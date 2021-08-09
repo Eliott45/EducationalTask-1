@@ -24,10 +24,6 @@ namespace AxGrid.Main
             if (Camera.main is { }) Camera.main.backgroundColor = newColor;
         } 
         
-        [OnDestroy]
-        private void Die()
-        {
-            Settings.GlobalModel.EventManager.RemoveAction(ChangeColor);
-        }
+
     }
 }

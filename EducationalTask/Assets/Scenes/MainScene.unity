@@ -728,7 +728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044966e666c75405fa6a0b97bb86419d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalModel: 0
+  globalModel: 1
   buttonName: 
   enableField: 
   defaultEnable: 1
@@ -1104,9 +1104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4f7bbc863b520418fcb43c25c968c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _idleState: {r: 1, g: 1, b: 1, a: 1}
-  _jobState: {r: 0.14975719, g: 0.9622642, b: 0.12255252, a: 1}
-  _shopState: {r: 0.1788003, g: 0.76769847, b: 0.7735849, a: 1}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044966e666c75405fa6a0b97bb86419d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalModel: 0
+  globalModel: 1
   buttonName: 
   enableField: 
   defaultEnable: 1
@@ -1567,7 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044966e666c75405fa6a0b97bb86419d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalModel: 0
+  globalModel: 1
   buttonName: 
   enableField: 
   defaultEnable: 1
