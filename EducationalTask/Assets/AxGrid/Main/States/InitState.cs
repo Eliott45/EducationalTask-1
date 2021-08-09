@@ -9,7 +9,7 @@ namespace AxGrid.Main.States
         [Enter]
         public void Enter()
         {
-            Settings.Model.Set("Money", 100);
+            Settings.Model.Set("Money",5);
 
             Parent.Change("Ready");
         }

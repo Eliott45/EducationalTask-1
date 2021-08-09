@@ -1,3 +1,4 @@
+using AxGrid.Base;
 using UnityEngine;
 using AxGrid.FSM;
 using AxGrid.Model;
@@ -10,7 +11,7 @@ namespace AxGrid.Main.States
         [Enter]
         public void Enter()
         {
-            Debug.Log("Idling...");
+            Settings.GlobalModel.EventManager.Invoke("Move");
         }
         
         [Bind]
