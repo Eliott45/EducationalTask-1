@@ -7,15 +7,9 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace AxGrid.Main
 {
-    public class Player : MonoBehaviourExtBind
+    public class Player : Unit
     {
-        [Header("Set in Inspector:")] 
-        [SerializeField] private Transform _idlePlace;
-        [SerializeField] private Transform _jobPlace;
-        [SerializeField] private Transform _shopPlace;
-
-        [Bind("OnActionChanged")]
-        private void Move()
+        private protected override void Move()
         {
             var currentPos = transform.position;
             var newPos = Settings.GlobalModel.Get("Action") switch
