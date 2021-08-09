@@ -1,17 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using AxGrid.FSM;
+using AxGrid.Model;
 
-public class Ready : MonoBehaviour
+namespace AxGrid.Main.States
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    [State("Ready")]
+    public class ReadyState : FSMState
     {
         
     }

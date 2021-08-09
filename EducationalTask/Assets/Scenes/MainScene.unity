@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 119090094}
   - component: {fileID: 119090096}
   - component: {fileID: 119090095}
+  - component: {fileID: 119090097}
   m_Layer: 5
   m_Name: MoneyCounter
   m_TagString: Untagged
@@ -396,7 +397,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Money: 200$'
+  m_Text: 'Money: 999$'
 --- !u!222 &119090096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -405,6 +406,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119090093}
   m_CullTransparentMesh: 1
+--- !u!114 &119090097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119090093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec7cf5af4ffa42b4b9a13d8e864d659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalModel: 0
+  fieldNames: []
+  modelChanged: 1
+  format: 'Money: {Money}$'
+  isFormatField: 0
+  applyModelForFromatField: 1
 --- !u!1 &494358001
 GameObject:
   m_ObjectHideFlags: 0

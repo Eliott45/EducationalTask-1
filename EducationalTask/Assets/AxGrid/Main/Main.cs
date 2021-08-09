@@ -11,6 +11,7 @@ namespace AxGrid.Main
         {
             Settings.Fsm = new FSM.FSM(); 
             Settings.Fsm.Add(new InitState()); 
+            Settings.Fsm.Add(new ReadyState());
         }
         
         [OnStart]

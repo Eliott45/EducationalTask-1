@@ -9,9 +9,9 @@ namespace AxGrid.Main.States
         [Enter]
         public void Enter()
         {
-            Log.Info("Init objects");
+            Settings.Model.Set("Money", 100);
 
-            // Parent.Change("Ready");
+            Parent.Change("Ready");
         }
 
         
