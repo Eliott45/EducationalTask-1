@@ -13,12 +13,13 @@ namespace AxGrid.Main
         {
             var newColor = Settings.GlobalModel.Get("Color") switch
             {
-                EColors.White => Color.white,
-                EColors.Blue => Color.cyan,
-                EColors.Green => Color.green,
+                EColors.White => EColors.White.GetColor(),
+                EColors.Blue => EColors.Blue.GetColor(),
+                EColors.Green => EColors.Green.GetColor(),
                 _ => Color.black
             };
             if (Camera.main is { }) Camera.main.backgroundColor = newColor;
+
         } 
         
 
