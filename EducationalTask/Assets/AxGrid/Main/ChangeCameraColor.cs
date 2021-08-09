@@ -17,14 +17,14 @@ namespace AxGrid.Main
             Settings.GlobalModel.EventManager.AddAction("ChangeColor", ChangeColor);
         }
 
-        private void ChangeColor()
+        private static void ChangeColor()
         {
-            var newColor = Settings.Fsm.CurrentStateName switch
+            var newColor = Settings.Model.Get("Color") switch
             {
-                "Ready" => _idleState,
-                "Job" => _jobState,
-                "Shop" => _shopState, 
-                _ => throw new ArgumentOutOfRangeException()
+                EColors.White => Color.white,
+                EColors.Blue => Color.cyan,
+                EColors.Green => Color.green,
+                _ => Color.black
             };
             if (Camera.main is { }) Camera.main.backgroundColor = newColor;
         } 
