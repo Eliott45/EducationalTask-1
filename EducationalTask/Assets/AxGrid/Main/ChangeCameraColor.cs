@@ -12,9 +12,9 @@ namespace AxGrid.Main
             Settings.GlobalModel.EventManager.AddAction("ChangeColor", ChangeColor);
         }
 
-        private static void ChangeColor()
+        private void ChangeColor()
         {
-            var newColor = Settings.Model.Get("Color") switch
+            var newColor = Settings.GlobalModel.Get("Color") switch
             {
                 EColors.White => Color.white,
                 EColors.Blue => Color.cyan,
@@ -24,6 +24,11 @@ namespace AxGrid.Main
             if (Camera.main is { }) Camera.main.backgroundColor = newColor;
         } 
         
+        [OnDestroy]
+        private void Die()
+        {
+            Settings.GlobalModel.EventManager.RemoveAction(ChangeColor);
+        }
 
     }
 }
