@@ -12,6 +12,7 @@ namespace AxGrid.Main.States
         public void Enter()
         {
             Settings.GlobalModel.EventManager.Invoke("Move");
+            Settings.GlobalModel.EventManager.Invoke("ChangeColor");
         }
         
         [Bind]
