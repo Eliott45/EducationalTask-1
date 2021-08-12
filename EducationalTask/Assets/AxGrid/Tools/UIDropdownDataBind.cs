@@ -28,7 +28,7 @@ namespace AxGrid.Tools
 
             _dropdown.onValueChanged.AddListener(delegate { OnSelect(); });
         }
-
+        
         [OnStart]
         public void StartStart()
         {
@@ -38,6 +38,14 @@ namespace AxGrid.Tools
             }
 
             _modelCollection = Model.GetList<string>(_nameModelCollection);
+            _modelOption = Model.GetString(_nameModelOption);
+            FillOptions(_modelCollection, _modelOption);
+        }
+
+        [OnEnable]
+        public void UpdateData()
+        {
+            _modelCollection = Model.GetList<string>(_nameModelCollection, new List<string>());
             _modelOption = Model.GetString(_nameModelOption);
             FillOptions(_modelCollection, _modelOption);
         }
@@ -63,7 +71,7 @@ namespace AxGrid.Tools
         private void FillOptions(List<string> options, string defaultValue)
         {
             _dropdown.ClearOptions();
-
+            
             if (options.Count == 0)
             {
                 Debug.LogWarning("Collection is empty!");
