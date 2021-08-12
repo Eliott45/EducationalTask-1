@@ -28,6 +28,5 @@ namespace AxGrid.Main
                 transform.position = Vector3.Lerp(currentPos, newPos, value);
             });
         }
-        
     }
 }
