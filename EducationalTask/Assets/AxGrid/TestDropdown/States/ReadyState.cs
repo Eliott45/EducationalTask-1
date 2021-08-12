@@ -18,7 +18,7 @@ namespace AxGrid.TestDropdown.States
         [Bind("OnDropdownChanged")]
         public void Print()
         {
-            Debug.Log($"Value changed: {Settings.Model.GetString("DifficultSelect")}");
+            Debug.Log($"Value changed: {Model.GetString("DifficultSelect")}");
         }
         
     }

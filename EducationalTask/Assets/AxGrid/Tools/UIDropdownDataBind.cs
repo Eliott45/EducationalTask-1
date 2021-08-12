@@ -37,8 +37,8 @@ namespace AxGrid.Tools
                 Debug.LogError("Name of model is empty!");
             }
 
-            _modelCollection = Settings.Model.GetList<string>(_nameModelCollection);
-            _modelOption = Settings.Model.GetString(_nameModelOption);
+            _modelCollection = Model.GetList<string>(_nameModelCollection);
+            _modelOption = Model.GetString(_nameModelOption);
             FillOptions(_modelCollection, _modelOption);
         }
         
@@ -92,7 +92,7 @@ namespace AxGrid.Tools
             SentData();
         }
 
-        private void SentData() => Settings.Model.Set(_nameModelOption, _modelCollection[_dropdown.value]);
+        private void SentData() => Model.Set(_nameModelOption, _modelCollection[_dropdown.value]);
         
     }
 }
