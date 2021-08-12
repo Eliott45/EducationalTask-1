@@ -34,7 +34,7 @@ namespace AxGrid.Tools
         {
             if (string.IsNullOrEmpty(_nameModelCollection) || string.IsNullOrEmpty(_nameModelOption))
             {
-                throw new Exception("Name of model empty!");
+                Debug.LogError("Name of model is empty!");
             }
 
             _modelCollection = Settings.Model.GetList<string>(_nameModelCollection);
@@ -61,6 +61,13 @@ namespace AxGrid.Tools
         private void FillOptions(List<string> options, string defaultValue)
         {
             _dropdown.ClearOptions();
+
+            if (options.Count == 0)
+            {
+                Debug.LogWarning("Collection is empty!");
+                return;
+            }
+            
             foreach (var option in options)
             {
                 _dropdown.options.Add(new Dropdown.OptionData {text = option});
@@ -79,6 +86,8 @@ namespace AxGrid.Tools
             }
             
             _dropdown.RefreshShownValue();
+            
+            SentData();
         }
 
         private void SentData() => Settings.Model.Set(_nameModelOption, _modelCollection[_dropdown.value]);
