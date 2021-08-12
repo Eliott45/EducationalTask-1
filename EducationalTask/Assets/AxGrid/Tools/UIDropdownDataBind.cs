@@ -53,8 +53,10 @@ namespace AxGrid.Tools
             if (!_dropdown.interactable || !isActiveAndEnabled) return;
 
             SentData();
+
+            Settings.Invoke("OnDropdownChanged", dropdownName);
             
-            Settings.Invoke($"On{_nameModelOption}Changed", dropdownName);
+            // Settings.Invoke($"On{_nameModelOption}Changed", dropdownName);
             // Model?.EventManager.Invoke($"On{_dropdownName}Select");
         }
         

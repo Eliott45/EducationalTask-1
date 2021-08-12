@@ -10,7 +10,7 @@ namespace AxGrid.TestDropdown.States
         [Enter]
         public void Enter()
         {
-            var options = new List<string> {};
+            var options = new List<string> {"Hard", "Normal", "Easy"};
             
             Settings.Model.Set("DifficultCollection",options);
             Settings.Model.Set("DifficultSelect", "Easy");
