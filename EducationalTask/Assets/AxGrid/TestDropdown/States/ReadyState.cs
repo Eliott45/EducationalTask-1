@@ -2,6 +2,7 @@ using AxGrid.FSM;
 using AxGrid.Main;
 using AxGrid.Model;
 using UnityEngine;
+using AxGrid.Base;
 
 namespace AxGrid.TestDropdown.States
 {
@@ -11,19 +12,14 @@ namespace AxGrid.TestDropdown.States
         [Enter]
         public void Enter()
         {
-            Settings.Model.Set("Option", Settings.Model.GetList<string>("Options")[0]);
+            
+        }
+
+        [Bind("OnDifficultSelectChanged")]
+        public void Print()
+        {
+            Debug.Log($"Value changed: {Settings.Model.GetString("DifficultSelect")}");
         }
         
-        [Bind]
-        public void OnSelect(string name, int option)
-        {
-            switch (name)
-            {
-                case "Dropdown":
-                    Settings.Model.Set("Option", Settings.Model.GetList<string>("Options")[option]);
-                    Debug.Log(Settings.Model.GetString("Option"));
-                    break;
-            }
-        }
     }
 }

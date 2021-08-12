@@ -1099,6 +1099,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalModel: 0
   dropdownName: 
+  _nameModelCollection: DifficultCollection
+  _nameModelOption: DifficultSelect
 --- !u!1 &894030305
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using AxGrid.Base;
+using AxGrid.Model;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +12,12 @@ namespace AxGrid.Tools
     {
         [Header("Set in Inspector")]
         public string dropdownName = "";
+        [SerializeField] private string _nameModelCollection;
+        [SerializeField] private string _nameModelOption;
         
         private Dropdown _dropdown;
+        private List<string> _modelCollection;
+        private string _modelOption;
 
         [OnAwake]
         public void StartAwake()
@@ -26,7 +32,14 @@ namespace AxGrid.Tools
         [OnStart]
         public void StartStart()
         {
-            FillOptions(Settings.Model.GetList<string>("Options"));
+            if (string.IsNullOrEmpty(_nameModelCollection) || string.IsNullOrEmpty(_nameModelOption))
+            {
+                throw new Exception("Name of model empty!");
+            }
+
+            _modelCollection = Settings.Model.GetList<string>(_nameModelCollection);
+            _modelOption = Settings.Model.GetString(_nameModelOption);
+            FillOptions(_modelCollection, _modelOption);
         }
         
         [OnDestroy]
@@ -38,20 +51,37 @@ namespace AxGrid.Tools
         private void OnSelect()
         {
             if (!_dropdown.interactable || !isActiveAndEnabled) return;
-            
-            Settings.Fsm?.Invoke("OnSelect", dropdownName, _dropdown.value);
-            Model?.EventManager.Invoke($"On{dropdownName}Select");
-        }
 
-        private void FillOptions(List<string> options)
+            SentData();
+            
+            Settings.Invoke($"On{_nameModelOption}Changed", dropdownName);
+            // Model?.EventManager.Invoke($"On{_dropdownName}Select");
+        }
+        
+        private void FillOptions(List<string> options, string defaultValue)
         {
             _dropdown.ClearOptions();
             foreach (var option in options)
             {
                 _dropdown.options.Add(new Dropdown.OptionData {text = option});
             }
+
+            if (!string.IsNullOrEmpty(defaultValue))
+            {
+                for (var i = 0; i < options.Count; i++)
+                {
+                    if (options[i] == defaultValue) _dropdown.value = i;
+                }
+            }
+            else
+            {
+                _dropdown.value = 0;
+            }
             
-            // _dropdown.value = 1;
+            _dropdown.RefreshShownValue();
         }
+
+        private void SentData() => Settings.Model.Set(_nameModelOption, _modelCollection[_dropdown.value]);
+        
     }
 }

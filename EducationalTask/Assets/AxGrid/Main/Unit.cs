@@ -13,5 +13,6 @@ namespace AxGrid.Main
 
         [Bind("OnActionChanged")]
         private protected abstract void Move();
+        
     }
 }
